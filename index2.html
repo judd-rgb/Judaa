@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+        
+        h1 {
+            border-bottom: 4px solid #3498db;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        input[type="text"], 
+        input[type="password"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        alert("Terimakasih sudah berkunjung");
+    </script>
+    <div class="container">
+        <h1>Formulir Pendaftaran</h1>
+        <form>
+            <!-- Input Text - Nama -->
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+            </div>
+            
+            <!-- Input Email -->
+            <div class="form-group">
+                <label for="NIM">NIM</label>
+                <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM Anda" required>
+            </div>
+            
+            <!-- Input Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Buat password" required>
+            </div>
+            
+            <!-- Text Area -->
+            <div class="form-group">
+                <label for="deskripsi">Alamat</label>
+                <textarea id="deskripsi" name="deskripsi" placeholder="Masukkan Alamat Anda"></textarea>
+            </div>
+            
+            <!-- Radio Button -->
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="laki" name="jenis_kelamin" value="laki">
+                        <label for="laki">Laki-laki</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Select Option -->
+            <div class="form-group">
+                <label for="program"></label>Fakultas
+                <select id="program" name="program" required>
+                    <option value="">Fakultas...</option>
+                    <option value="Fakultas">Kedokteran</option>
+                    <option value="Fakultas">Hukum</option>
+                    <option value="Fakultas">Pertanian</option>
+                    <option value="Fakultas">Teknik</option>
+                    <option value="Fakultas">Ekonomi dan Bisnis</option>
+                    <option value="Fakultas">Kedokteran Gigi</option>
+                    <option value="Fakultas">Ilmu Budaya</option>
+                    <option value="Fakultas">MIPA</option>
+                    <option value="Fakultas">Ilmu Sosial dan Politik</option>
+                    <option value="Fakultas">Kesehatan Masyarakat</option>
+                    <option value="Fakultas">Psikologi</option>
+                    <option value="Fakultas">Farmasi</option>
+                    <option value="Fakultas">Keperawatan</option>
+                    <option value="Fakultas">Ilmu Komputer dan Teknologi Informasi</option>
+                    <option value="Fakultas">Kehutanan</option>
+                    <option value="Fakultas">Vokasi</option>
+                    </select>
+            </div>
+            
+            <!-- Submit Button -->
+            <button><a href="index.html">Daftar dan Pindah ke Halaman Selanjutnya</a></button>
+
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Punya Juda</title>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Kalkulator Sederhana</h1>
+        <div class="input-group">
+            <label for="angka-pertama">Angka Pertama :</label>
+            <input type="number" id="angka-pertama" placeholder="Masukkan angka pertama">
+        </div>
+        
+        <div class="input-group">
+            <label for="angka-kedua">Angka Ke-dua :</label>
+            &nbsp;<input type="number" id="angka-kedua" placeholder="Masukkan angka kedua">
+        </div>
+    </table>
+        
+        <div class="buttons">
+            <button class="add" onclick="hitung('tambah')">+</button>
+            <button class="subtract" onclick="hitung('kurang')">-</button>
+            <button class="multiply" onclick="hitung('kali')">×</button>
+            <button class="divide" onclick="hitung('bagi')">÷</button>
+        </div>
+        
+        <div class="result">
+            <h3>Hasil</h3>
+            <div id="hasil">0</div>
+        </div>
+    </div>
+
+    <script>
+        function hitung(operasi) {
+            // Mendapatkan nilai dari input
+            const angkaPertama = parseFloat(document.getElementById('angka-pertama').value);
+            const angkaKedua = parseFloat(document.getElementById('angka-kedua').value);
+            const hasilElement = document.getElementById('hasil');
+            
+            // Reset error styling
+            hasilElement.className = '';
+            
+            // Validasi input
+            if (isNaN(angkaPertama) || isNaN(angkaKedua)) {
+                hasilElement.textContent = 'Masukkan angka yang valid!';
+                hasilElement.className = 'error';
+                return;
+            }
+            
+            let hasil;
+            
+            // Melakukan operasi berdasarkan tombol yang ditekan
+            switch(operasi) {
+                case 'tambah':
+                    hasil = angkaPertama + angkaKedua;
+                    break;
+                case 'kurang':
+                    hasil = angkaPertama - angkaKedua;
+                    break;
+                case 'kali':
+                    hasil = angkaPertama * angkaKedua;
+                    break;
+                case 'bagi':
+                    if (angkaKedua === 0) {
+                        hasilElement.textContent = 'Tidak bisa dibagi dengan 0!';
+                        hasilElement.className = 'error';
+                        return;
+                    }
+                    hasil = angkaPertama / angkaKedua;
+                    break;
+                default:
+                    hasil = 0;
+            }
+            
+            // Menampilkan hasil
+            hasilElement.textContent = hasil;
+        }
+    </script>
+</body>
+</html>
